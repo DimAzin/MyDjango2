@@ -78,8 +78,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Драйвер для PostgreSQL
+        'NAME': 'Game',                 # Имя базы данных
+        'USER': 'postgres',                 # Имя пользователя базы данных
+        'PASSWORD': '123456',                       # Пароль пользователя
+        'HOST': '127.0.0.1',                        # Хост базы данных (обычно localhost или 127.0.0.1)
+        'PORT': '5432',
     }
 }
 
