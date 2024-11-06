@@ -1,0 +1,15 @@
+
+{% extends 'first_task/menu.html' %}
+
+{% block pagename %}Главная страница{% endblock %}
+
+{% block content %}
+    <h2>Добро пожаловать на главную страницу!</h2>
+    <nav>
+    {% block menu %}
+    {% for item in menu_items %}
+        <a href="{% url item.url_name %}">{{ item.title }}</a>
+    {% endfor %}
+    {% endblock %}
+    </nav>
+{% endblock %}

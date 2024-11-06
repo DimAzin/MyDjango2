@@ -1,0 +1,23 @@
+
+<!-- first_task/templates/first_task/shop_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+</head>
+<body>
+    <h1>Список товаров</h1>
+    <ul>
+        {% for item in items %}
+            <li>
+                <p><strong>{{ item.name }}</strong> | {{ item.description }} | Стоимость: {{ item.price }} руб.</p>
+                <button>Добавить в корзину</button>
+            </li>
+        {% empty %}
+            <p>Нет доступных товаров.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
